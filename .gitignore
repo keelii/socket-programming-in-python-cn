@@ -1,0 +1,6 @@
+_book
+.vscode
+node_modules
+*.pdf
+*.epub
+*.mobi
