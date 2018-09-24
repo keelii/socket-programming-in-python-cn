@@ -9,7 +9,6 @@
 > Nathan Jennings 是 Real Python 教程团队的一员，他在很早之前就使用 C 语言开始了自己的编程生涯，但是最终发现了 Python，从 Web 应用和网络数据收集到网络安全，他喜欢任何 Pythonic 的东西
 > —— realpython
 
-
 ## 译者注
 
 [译者](https://keelii.com/) 是一名前端工程师，平常会写很多的 JavaScript。但是当我使用 JavaScript 很长一段时间后，会对一些 *语言无关* 的编程概念感兴趣，比如：网络/socket 编程、异步/并发、线/进程通信等。然而恰好这些内容在 JavasScript 领域很少见
@@ -24,6 +23,4 @@
 
 本文（翻译版）通过了 realpython 官方授权，原文版权归其所有，任何转载请联系他们
 
-
-
-[开始吧](get-started.md)
+[开始吧](0-get-started.md)
