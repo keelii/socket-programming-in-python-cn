@@ -2,8 +2,7 @@
 
 ## 说明
 
-本书翻译自 [realpython](https://realpython.com/) 网站上的文章教程 [Socket Programming in Python (Guide)](https://realpython.com/python-sockets/)，由于原文比较长，所以整理成了 [Gitbook](https://legacy.gitbook.com/book/keelii/socket-programming-in-python-cn/details) 方便阅读
-
+本书翻译自 [realpython](https://realpython.com/) 网站上的文章教程 [Socket Programming in Python (Guide)](https://realpython.com/python-sockets/)，由于原文很长，所以整理成了 Gitbook 方便阅读。你可以去 [首页](https://legacy.gitbook.com/book/keelii/socket-programming-in-python-cn/details) 下载 [PDF](https://legacy.gitbook.com/download/pdf/book/keelii/socket-programming-in-python-cn)/[Mobi](https://legacy.gitbook.com/download/mobi/book/keelii/socket-programming-in-python-cn)/[ePub](https://legacy.gitbook.com/download/epub/book/keelii/socket-programming-in-python-cn) 格式文件或者 [在线阅读](https://keelii.gitbooks.io/socket-programming-in-python-cn/content/)
 
 ## 原作者
 
