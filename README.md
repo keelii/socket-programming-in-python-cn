@@ -23,4 +23,4 @@
 
 本文（翻译版）通过了 realpython 官方授权，原文版权归其所有，任何转载请联系他们
 
-[开始吧](0-get-started.md)
+[开始吧](00-get-started.md)
