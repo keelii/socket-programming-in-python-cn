@@ -4,7 +4,7 @@
 
 ## 多连接的服务端
 
-首页，我们来看眼多连接服务端程序的代码，`multiconn-server.py`。这是开始建立监听 socket 部分
+首先，我们来看眼多连接服务端程序的代码，`multiconn-server.py`。这是开始建立监听 socket 部分
 
 ```python
 import selectors
