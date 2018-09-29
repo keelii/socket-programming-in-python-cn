@@ -4,3 +4,6 @@ node_modules
 *.pdf
 *.epub
 *.mobi
+*.plist
+*.resource
+*.config
