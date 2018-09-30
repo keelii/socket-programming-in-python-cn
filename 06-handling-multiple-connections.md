@@ -10,13 +10,11 @@ data = s.recv(1024)
 
 `send()` 方法也是这个原理，它返回发送内容的字节数，结果可能小于传入的发送内容，你得处理这处情况，按需多次调用 `send()` 方法来发送完整的数据
 
-> 应用程序负责检查是否已发送所有数据；如果仅传输了一些数据，则应用程序需要尝试传
-> 递剩余数据 [引用](https://docs.python.org/3/library/socket.html#socket.socket.send)
+> 应用程序负责检查是否已发送所有数据；如果仅传输了一些数据，则应用程序需要尝试传递剩余数据 [引用](https://docs.python.org/3/library/socket.html#socket.socket.send)
 
 我们可以使用 `sendall()` 方法来回避这个过程
 
-> 和 send() 方法不一样的是，`sendall()` 方法会一直发送字节，只到所有的数据传输完成
-> 或者中途出现错误。成功的话会返回 None [引用](https://docs.python.org/3/library/socket.html#socket.socket.sendall)
+> 和 send() 方法不一样的是，`sendall()` 方法会一直发送字节，只到所有的数据传输完成或者中途出现错误。成功的话会返回 None [引用](https://docs.python.org/3/library/socket.html#socket.socket.sendall)
 
 到目前为止，我们有两个问题：
 
@@ -31,9 +29,7 @@ data = s.recv(1024)
 
 `select()` 允许你检查多个 socket 的 I/O 完成情况，所以你可以使用它来检测哪个 socket I/O 是就绪状态从而执行读取或写入操作，但是这是 Python，总会有更多其它的选择，我们将使用标准库中的 [selectors](https://docs.python.org/3/library/selectors.html) 模块，所以我们使用了最有效的实现，不用在意你使用的操作系统：
 
-> 这个模块提供了高层且高效的 I/O 多路复用，基于原始的 `select` 模块构建，推荐用
-> 户使用这个模块，除非他们需要精确到操作系统层面的使用控制 [引用
-> ](https://docs.python.org/3/library/selectors.html)
+> 这个模块提供了高层且高效的 I/O 多路复用，基于原始的 `select` 模块构建，推荐用户使用这个模块，除非他们需要精确到操作系统层面的使用控制 [引用](https://docs.python.org/3/library/selectors.html)
 
 尽管如此，使用 `select()` 也无法并发执行。这取决于您的工作负载，这种实现仍然会很快。这也取决于你的应用程序对连接所做的具体事情或者它需要支持的客户端数量
 

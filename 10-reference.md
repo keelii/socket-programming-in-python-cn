@@ -11,9 +11,7 @@
 
 下面这段话来自 python 的 socket 模块文档：
 
-> 所有的错误都会触发异常，像无效参数类型和内存不足的常见异常可以被抛出；从
-> Python 3.3 开始，与 socket 或地址语义相关的错误会引发 OSError 或其子类之一的异
-> 常 [引用](https://docs.python.org/3/library/socket.html)
+> 所有的错误都会触发异常，像无效参数类型和内存不足的常见异常可以被抛出；从 Python 3.3 开始，与 socket 或地址语义相关的错误会引发 OSError 或其子类之一的异常 [引用](https://docs.python.org/3/library/socket.html)
 
 异常                   | `errno` 常量 | 说明
 --                     | --          | --
@@ -36,10 +34,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
 
 注意下面这段 python socket 模块中关于 host 值和地址元组文档
 
-> 对于 IPv4 地址，使用主机地址的方式有两种：`''` 空字符串表示 `INADDR_ANY`，字符
-> `'<broadcast>'` 表示 `INADDR_BROADCAST`，这个行为和 IPv6 不兼容，因此如果你的
-> 程序中使用的是 IPv6 就应该避免这种做法。[源文档
-> ](https://docs.python.org/3/library/socket.html#socket-families)
+> 对于 IPv4 地址，使用主机地址的方式有两种：`''` 空字符串表示 `INADDR_ANY`，字符 `'<broadcast>'` 表示 `INADDR_BROADCAST`，这个行为和 IPv6 不兼容，因此如果你的程序中使用的是 IPv6 就应该避免这种做法。[源文档](https://docs.python.org/3/library/socket.html#socket-families)
 
 我在本教程中使用了 IPv4 地址，但是如果你的机器支持，也可以试试 IPv6 地址。`socket.getaddrinfo()` 方法会返回五个元组的序列，这包括所有创建 socket 连接的必要参数，`socket.getaddrinfo()` 方法理解并处理传入的 IPv6 地址和主机名
 
@@ -64,11 +59,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
 
 下面一段来自 python socket 模块文档
 
-> 如果你主机名称做为 IPv4/v6 socket 地址的 host 部分，程序可能会出现非预期的结果
-> ，由于 python 使用了 DNS 查找过程中的第一个结果，socket 地址会被解析成与真正的
-> IPv4/v6 地址不同的其它地址，这取决于 DNS 解析和你的 host 文件配置。如果想得到
-> 确定的结果，请使用数字格式的地址做为 host 参数的值 [源文档
-> ](https://docs.python.org/3/library/socket.html)
+> 如果你主机名称做为 IPv4/v6 socket 地址的 host 部分，程序可能会出现非预期的结果，由于 python 使用了 DNS 查找过程中的第一个结果，socket 地址会被解析成与真正的 IPv4/v6 地址不同的其它地址，这取决于 DNS 解析和你的 host 文件配置。如果想得到确定的结果，请使用数字格式的地址做为 host 参数的值 [源文档](https://docs.python.org/3/library/socket.html)
 
 通常回环地址 `localhost` 会被解析到 `127.0.0.1` 或 `::1` 上，你的系统可能就是这么设置的，也可能不是。这取决于你系统配置，与所有 IT 相关的事情一样，总会有例外的情况，没办法完全保证 localhost 被解析到了回环地址上
 
@@ -126,9 +117,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
 
 当数据被调用存储到了文件或者数据库中而且又没有数据的元信息的时候，问题就很麻烦了，当数据被传到其它端，它将试着检测数据的编码方式。有关讨论，请参阅 Wikipedia 的 [Unicode](https://en.wikipedia.org/wiki/Unicode) 文章，它引用了 [RFC 3629:UTF-8, a transformation format of ISO 10646](https://tools.ietf.org/html/rfc3629#page-6)
 
-> 然而 UTF-8 的标准 RFC 3629 中推荐禁止在 UTF-8 协议中使用标记字节序 (BOM)，但是
-> 讨 论了无法实现的情况，最大的问题在于如何使用一种模式在不依赖 BOM 的情况下区分
-> UTF-8 和其它编码方式
+> 然而 UTF-8 的标准 RFC 3629 中推荐禁止在 UTF-8 协议中使用标记字节序 (BOM)，但是讨论了无法实现的情况，最大的问题在于如何使用一种模式在不依赖 BOM 的情况下区分 UTF-8 和其它编码方式
 
 避开这些问题的方法就是总是存储数据使用的编码方式，换句话说，如果不只用 utf-8 格式的编码或者其它的带有 BOM 的编码就要尝试以某种方式将编码方式存储为元数据，然后你就可以在数据上附加编码的头信息，告诉接收者编码方式
 

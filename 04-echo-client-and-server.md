@@ -27,9 +27,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             conn.sendall(data)
 ```
 
-> 注意：上面的代码你可能还没法完全理解，但是不用担心。这几行代码做了很多事情，这
-> 只是一个起点，帮你看见这个简单的服务器是如何运行的
-> 教程后面有引用部分，里面有很多额外的引用资源链接，这个教程中我将把链接放在那儿
+> 注意：上面的代码你可能还没法完全理解，但是不用担心。这几行代码做了很多事情，这只是一个起点，帮你看见这个简单的服务器是如何运行的教程后面有引用部分，里面有很多额外的引用资源链接，这个教程中我将把链接放在那儿
 
 让我们一起来看一下 API 调用以及发生了什么
 
@@ -62,10 +60,7 @@ host 可以是主机名称、IP 地址、空字符串，如果使用 IP 地址�
 
 使用 `bind()` 传参为主机名称的时候需要注意：
 
-> 如果你在 host 部分 **主机名称** 作为 IPv4/v6 socket 的地址，程序可能会产生非确
-> 定性的行为，因为 Python 会使用 DNS 解析后的 **第一个** 地址，根据 DNS 解析的结
-> 果或者 host 配置 socket 地址将会以不同方式解析为实际的 IPv4/v6 地址。如果想得
-> 到确定的结果传入的 host 参数建议使用数字格式的地址 [引用](https://docs.python.org/3/library/socket.html)
+> 如果你在 host 部分 **主机名称** 作为 IPv4/v6 socket 的地址，程序可能会产生非确定性的行为，因为 Python 会使用 DNS 解析后的 **第一个** 地址，根据 DNS 解析的结果或者 host 配置 socket 地址将会以不同方式解析为实际的 IPv4/v6 地址。如果想得到确定的结果传入的 host 参数建议使用数字格式的地址 [引用](https://docs.python.org/3/library/socket.html)
 
 我稍后将在 [使用主机名](#使用主机名) 部分讨论这个问题，但是现在也值得一提。目前来说你只需要知道当使用主机名时，你将会因为 DNS 解析的原因得到不同的结果
 
@@ -127,8 +122,7 @@ print('Received', repr(data))
 
 让我们运行打印程序的客户端和服务端，观察他们的表现，看看发生了什么事情
 
-> 如果你在运行示例代码时遇到了问题，可以阅读 [如何使用 Python 开发命令行命令](https://dbader.org/blog/how-to-make-command-line-commands-with-python)，如果
-> 你使用的是 windows 操作系统，请查看 [Python Windows FAQ](https://docs.python.org/3.6/faq/windows.html)
+> 如果你在运行示例代码时遇到了问题，可以阅读 [如何使用 Python 开发命令行命令](https://dbader.org/blog/how-to-make-command-line-commands-with-python)，如果你使用的是 windows 操作系统，请查看 [Python Windows FAQ](https://docs.python.org/3.6/faq/windows.html)
 
 打开命令行程序，进入你的代码所在的目录，运行打印程序的服务端：
 
