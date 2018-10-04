@@ -7,3 +7,4 @@ node_modules
 *.plist
 *.resource
 *.config
+.UlyssesRoot
