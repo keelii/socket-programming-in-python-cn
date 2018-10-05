@@ -16,7 +16,7 @@
 异常                   | `errno` 常量 | 说明
 --                     | --          | --
 BlockingIOError        | EWOULDBLOCK  | 资源暂不可用，比如在非阻塞模式下调用 `send()` 方法，对方太繁忙面没有读取，发送队列满了，或者网络有问题
-OSError                | EADDRINUSE   | 端口被战用，确保没有其它的进程与当前的程序运行在同一地址/端口上，你的服务器设置了 `SO_REUSEADDR` 参数
+OSError                | EADDRINUSE   | 端口被战用，确保没有其它的进程与当前的程序运行在同一地址 / 端口上，你的服务器设置了 `SO_REUSEADDR` 参数
 ConnectionResetError   | ECONNRESET   | 连接被重置，远端的进程崩溃，或者 socket 意外关闭，或是有防火墙或链路上的设配有问题
 TimeoutError           | ETIMEDOUT    | 操作超时，对方没有响应
 ConnectionRefusedError | ECONNREFUSED | 连接被拒绝，没有程序监听指定的端口
@@ -48,10 +48,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
  6, '', ('93.184.216.34', 80))]
 ```
 
-如果 IPv6 可用的话结果可能有所不同，上面返回的值可以被用于 `socket.socket()` 和
-`socket.connect()` 方法调用的参数，在 python socket 模块文档中的 [示例
-](https://docs.python.org/3/library/socket.html#example) 一节中有客户端和服务端
-程序
+如果 IPv6 可用的话结果可能有所不同，上面返回的值可以被用于 `socket.socket()` 和 `socket.connect()` 方法调用的参数，在 python socket 模块文档中的 [示例](https://docs.python.org/3/library/socket.html#example) 一节中有客户端和服务端程序
 
 ## 使用主机名
 
@@ -65,7 +62,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
 
 比如在 Linux 上，查看 `man nsswitch.conf` 的结果，域名切换配置文件，还有另外一个 macOS 和 Linux 通用的配置文件地址是：`/etc/hosts`，在 windows 上则是`C:\Windows\System32\drivers\etc\hosts`，hosts 文件包含了一个文本格式的静态域名地址映射表，总之 DNS 也是一个难题
 
-有趣的是，在撰写这篇文章的时候（2018 年 6 月），有一个关于 [让 localhost 成为真正的 localhost](https://tools.ietf.org/html/draft-ietf-dnsop-let-localhost-be-localhost-02)的 RFC 草案，讨论就是围绕着 localhost 使用的情况开展的
+有趣的是，在撰写这篇文章的时候（2018 年 6 月），有一个关于 [让 localhost 成为真正的 localhost](https://tools.ietf.org/html/draft-ietf-dnsop-let-localhost-be-localhost-02) 的 RFC 草案，讨论就是围绕着 localhost 使用的情况开展的
 
 最重要的一点是你要理解当你在应用程序中使用主机名时，返回的地址可能是任何东西，如果你有一个安全性敏感的应用程序，不要使用主机名。取决于你的应用程序和环境，这可能会困扰到你
 
@@ -103,7 +100,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
 
 有趣的是 TCP 连接一端打开，另一端关闭的状态是完全合法的，这被称做 TCP「半连接」，是否需要这种保持状态是由应用程序决定的，通常来说不需要。这种状态下，关闭方将不能发送任何数据，它只能接收数据
 
-我不是在提倡你采用这种方法，但是作为一个例子，HTTP 使用了一个名为「Connection」的头来标准化规定应用程序是否关闭或者保持连接状态，更多内容请查看 [RFC 7230 中 6.3 节, HTTP 协议 (HTTP/1.1): 消息语法与路由](https://tools.ietf.org/html/rfc7230#section-6.3)
+我不是在提倡你采用这种方法，但是作为一个例子，HTTP 使用了一个名为「Connection」的头来标准化规定应用程序是否关闭或者保持连接状态，更多内容请查看 [RFC 7230 中 6.3 节，HTTP 协议 (HTTP/1.1): 消息语法与路由](https://tools.ietf.org/html/rfc7230#section-6.3)
 
 当你在设计应用程序及其应用层协议的时候，最好先了解一下如何关闭连接，有时这很简单而且很明显，或者采取一些可以实现的原型，这取决于你的应用程序以及消息循环如何被处理成期望的数据，只要确保 socket 在完成工作后总是能正确关闭
 
@@ -111,7 +108,7 @@ socket.AF_INET6 | IPv6 | (host, port, flowinfo, scopeid) | 主机名同上，IPv
 
 查看维基百科 [字节序](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F) 中关于不同的 CPU 是如何在内存中存储字节序列的，处理单个字节时没有任何问题，但是当把多个字节处理成单个值（四字节整型）时，如果和你通信的另一端使用了不同的字节序时字节顺序需要被反转
 
-字节顺序对于字符文本来说也很重要，字符文本通过表示为多字节的序列，就像 Unicode 一样。除非你只使用 `true` 和 ASCII 字符来控制客户端和服务端的实现，否则使用 utf-8 格式或者支持字节序标识(BOM) 的 Unicode 字符集会比较合适
+字节顺序对于字符文本来说也很重要，字符文本通过表示为多字节的序列，就像 Unicode 一样。除非你只使用 `true` 和 ASCII 字符来控制客户端和服务端的实现，否则使用 utf-8 格式或者支持字节序标识 (BOM) 的 Unicode 字符集会比较合适
 
 在应用层协议中明确的规定使用编码格式是很重要的，你可以规定所有的文本都使用 utf-8 或者用「content-encoding」头指定编码格式，这将使你的程序不需要检测编码方式，当然也应该尽量避免这么做
 

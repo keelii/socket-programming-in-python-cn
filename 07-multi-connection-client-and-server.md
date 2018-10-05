@@ -1,4 +1,4 @@
-# 多连接的客户端/服务器程序
+# 多连接的客户端 / 服务器程序
 
 下面两节中，我们将使用 selectors 模块中的 selector 对象来创建一个可以同时处理多个请求的客户端和服务端
 
@@ -41,7 +41,7 @@ while True:
             service_connection(key, mask)
 ```
 
-`sel.select(timeout=None)` 调用会阻塞直到 socket I/O 就绪。它返回一个(key, events) 元组，每个 socket 都有一个。key 就是一个包含 `fileobj` 属性的具名元组。`key.fileobj` 是一个 socket 对象，`mask` 表示一个操作就绪的事件掩码
+`sel.select(timeout=None)` 调用会阻塞直到 socket I/O 就绪。它返回一个 (key, events) 元组，每个 socket 都有一个。key 就是一个包含 `fileobj` 属性的具名元组。`key.fileobj` 是一个 socket 对象，`mask` 表示一个操作就绪的事件掩码
 
 如果 `key.data` 为空，我们就可以知道它来自于监听 socket，我们需要调用 `accept()` 方法来授受连接请求。我们将使用一个 `accept()` 包装函数来获取新的 socket 对象并注册到 `selector` 上，我们马上就会看到
 

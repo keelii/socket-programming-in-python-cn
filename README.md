@@ -6,12 +6,12 @@
 
 ## 原作者
 
-> Nathan Jennings 是 Real Python 教程团队的一员，他在很早之前就使用 C 语言开始了自己的编程生涯，但是最终发现了 Python，从 Web 应用和网络数据收集到网络安全，他喜欢任何 Pythonic 的东西  
+> Nathan Jennings 是 Real Python 教程团队的一员，他在很早之前就使用 C 语言开始了自己的编程生涯，但是最终发现了 Python，从 Web 应用和网络数据收集到网络安全，他喜欢任何 Pythonic 的东西
 > —— realpython
 
 ## 译者注
 
-[译者](https://keelii.com/) 是一名前端工程师，平常会写很多的 JavaScript。但是当我使用 JavaScript 很长一段时间后，会对一些 _语言无关_ 的编程概念感兴趣，比如：网络/socket 编程、异步/并发、线/进程通信等。然而恰好这些内容在 JavasScript 领域很少见
+[译者](https://keelii.com/) 是一名前端工程师，平常会写很多的 JavaScript。但是当我使用 JavaScript 很长一段时间后，会对一些 _语言无关_ 的编程概念感兴趣，比如：网络 /socket 编程、异步 / 并发、线 / 进程通信等。然而恰好这些内容在 JavasScript 领域很少见
 
 因为一直从事 Web 开发，所以我认为理解了网络通信及其 socket 编程就理解了 Web 开发的某些本质。过程中我发现 Python 社区有很多我喜欢的内容，并且很多都是高质量的公开发布且开源的
 
