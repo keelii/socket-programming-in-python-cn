@@ -17,7 +17,7 @@
 
 最近我发现了这篇文章，系统地从底层网络通信讲到了应用层协议及其 C/S 架构的应用程序，由浅入深。虽然代码、API 使用了 Python 语言，但是底层原理相通。非常值得一读，推荐给大家
 
-另外，由于本人水平所限，翻译的内容难免出现偏差，如果你在阅读的过程中发现问题，请毫不犹豫的提醒我或者开新 [PR](https://github.com/keelii/socket-programming-in-python-cn/pulls)。或者有什么不理解的地方也可以开 [issue](https://github.com/keelii/socket-programming-in-python-cn/issues) 讨论，当然 star 也是欢迎的
+另外，由于本人水平所限，翻译的内容难免出现偏差，如果你在阅读的过程中发现问题，请毫不犹豫的提醒我或者开新 [PR](https://github.com/keelii/socket-programming-in-python-cn/pulls)。或者有什么不理解的地方也可以开 [issue](https://github.com/keelii/socket-programming-in-python-cn/issues) 讨论。当然 star 或者 [支持](https://user-images.githubusercontent.com/458894/32358969-179e7a28-c085-11e7-882a-485164168f74.png) 也是欢迎的
 
 ## 授权
 
