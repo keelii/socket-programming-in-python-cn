@@ -8,3 +8,4 @@ node_modules
 *.resource
 *.config
 .UlyssesRoot
+.vuepress
